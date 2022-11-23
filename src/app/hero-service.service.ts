@@ -9,6 +9,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class HeroServiceService {
   private heroesUrl = 'api/heroes'
+  private heroes: Array<IHero>;
   constructor( private  messageService: MessageService,
   private http: HttpClient
   ) {
@@ -19,11 +20,9 @@ export class HeroServiceService {
     return this.http.get<Array<IHero>>(this.heroesUrl)
   }
   getHero (id: number) {
-    this.messageService.add(`fetched hero: ${heroes[id].id} with name ${heroes[id].name}`)
-    return of(heroes[id - 1])
-  }
-  log (message: string) {
-    this.messageService.add(`heroService: ${message}`)
+    this.http.get<Array<IHero>>(this.heroesUrl).subscribe(heroes => this.heroes = heroes)
+    this.messageService.add(`fetched hero: ${this.heroes[id].id} with name ${this.heroes[id].name}`)
+    return of(this.heroes[id - 1])
   }
 }
 
