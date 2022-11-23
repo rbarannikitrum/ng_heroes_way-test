@@ -12,9 +12,11 @@ export class HeroServiceService {
 
   }
   getHeroes (): Observable<Array<IHero>> {
-    // костыль с таймаутом
-    setTimeout(() => this.messageService.add('heroes fetched'), 2000)
-    return of(heroes).pipe(delay(2000))
+    this.messageService.add('heroes fetched')
+    return of(heroes)
+  }
+  getHero(id: number): Observable<IHero> {
+    return of (heroes[id])
   }
 }
 

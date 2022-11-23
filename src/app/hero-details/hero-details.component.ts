@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IHero} from "../hero/hero.interface";
+import {HeroServiceService} from "../hero-service.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-hero-details',
@@ -7,12 +9,21 @@ import {IHero} from "../hero/hero.interface";
   styleUrls: ['./hero-details.component.css']
 })
 export class HeroDetailsComponent implements OnInit {
+  hero: IHero
+  constructor(
+    private heroService: HeroServiceService,
+    private location: Location,
+    private route: ActivatedRoute
+  ) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
+    this.getHero()
   }
-  @Input() hero: IHero
-  @Input() edit: boolean
+  getHero () {
+      this.heroService.getHero(2).subscribe(hero => this.hero = hero)
+  }
+
 
 }

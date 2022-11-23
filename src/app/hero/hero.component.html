@@ -1,7 +1,7 @@
-<div class="container"
-     (click)="onSelect(hero)"
-     [class.selected]="edit === true">
+
+<div class="container" routerLink="/details/{{hero.id}}">
+
   <h1 class="id">{{hero.id}}</h1>
   <h1 class="name">{{hero.name}}</h1>
 </div>
-<app-hero-details [edit] = 'edit' [hero] = 'hero'></app-hero-details>
+<router-outlet></router-outlet>

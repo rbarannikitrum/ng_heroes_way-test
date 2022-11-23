@@ -1,5 +1,7 @@
 <div style="display: flex; justify-content: center">
   <h1 style="color : mediumaquamarine">{{title | uppercase}}</h1>
 </div>
-<app-all-heroes></app-all-heroes>
-<app-messages></app-messages>
+<button style="font-size: 24px; border: 1px solid black; margin: 10px" routerLink="heroes"> heroes</button>
+<button style="font-size: 24px; border: 1px solid black; margin: 10px" routerLink="dashboard"> dashboard</button>
+
+<router-outlet></router-outlet>

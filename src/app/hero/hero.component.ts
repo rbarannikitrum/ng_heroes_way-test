@@ -15,9 +15,4 @@ export class HeroComponent implements OnInit {
   ngOnInit(): void {
   }
   @Input() hero:  IHero
-  edit: boolean = false
-  onSelect(hero: IHero) {
-    this.edit = !this.edit
-    this.messageService.add(`selected: ${hero.id}: ${hero.name}`)
-  }
 }
