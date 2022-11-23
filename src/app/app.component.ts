@@ -9,4 +9,7 @@ export class AppComponent {
   title = 'heroes';
   constructor() {
   }
+  goBack () {
+    history.back()
+  }
 }
