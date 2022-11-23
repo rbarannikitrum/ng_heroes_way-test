@@ -1,0 +1,10 @@
+<div class="container" (click)="edit = !edit" [class.selected]="edit === true">
+  <h1 class="id">{{hero.id}}</h1>
+  <h1 class="name">{{hero.name}}</h1>
+</div>
+<div style="display: flex; flex-direction: column; margin: 10px" *ngIf="edit">
+  <span class="name_edit">{{hero.name | uppercase}} details</span>
+  <span class="id_edit">id : {{hero.id}}</span>
+  <input class="input" [(ngModel)]="hero.name"/>
+</div>
+
