@@ -15,7 +15,10 @@ export class HeroServiceService {
     this.messageService.add('heroes fetched')
     return of(heroes)
   }
-
+  getHero (id: number) {
+    this.messageService.add(`fetched hero: ${heroes[id].id} with name ${heroes[id].name}`)
+    return of(heroes[id - 1])
+  }
 }
 
 

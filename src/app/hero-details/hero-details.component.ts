@@ -17,7 +17,7 @@ export class HeroDetailsComponent implements OnInit {
 
   ngOnInit() {
     const route: number = this.route.snapshot.params.id
-    this.heroService.getHeroes().subscribe(heroes => this.hero = heroes[route - 1])
+    this.heroService.getHero(route).subscribe(hero => this.hero = hero)
   }
 
 
