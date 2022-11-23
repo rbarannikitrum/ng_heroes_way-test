@@ -9,13 +9,17 @@ import {IHero} from "../hero/hero.interface";
 })
 export class AllHeroesComponent implements OnInit {
   heroes : Array<IHero>
-  constructor(private heroService: HeroServiceService) { }
+  heroService : HeroServiceService
+  constructor(heroService: HeroServiceService) {
+    this.heroService = heroService
+  }
 
   ngOnInit(): void {
     this.getHeroes()
   }
   getHeroes () {
-    this.heroes = this.heroService.getHeroes()
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes)
   }
 
 }
