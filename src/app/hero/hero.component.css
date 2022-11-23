@@ -21,7 +21,7 @@
 
 }
 .name {
-  margin-left: 20px;
+  margin: 16px 0 16px 20px;
   font-size: 20px;
 }
 .input {

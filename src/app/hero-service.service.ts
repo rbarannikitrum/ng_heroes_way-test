@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {IHero} from "./hero/hero.interface";
-import {delay, Observable, of} from "rxjs";
+import {catchError, delay, Observable, of, tap} from "rxjs";
 import {MessageService} from "./message.service";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,6 @@ export class HeroServiceService {
   constructor( private  messageService: MessageService,
   private http: HttpClient
   ) {
-
   }
   getHeroes (): Observable<Array<IHero>> {
     this.messageService.add('heroes fetched')
@@ -24,6 +23,7 @@ export class HeroServiceService {
     this.messageService.add(`fetched hero: ${this.heroes[id].id} with name ${this.heroes[id].name}`)
     return of(this.heroes[id - 1])
   }
+
 }
 
 
