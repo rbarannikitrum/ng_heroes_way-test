@@ -10,19 +10,14 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class HeroDetailsComponent implements OnInit {
   hero: IHero
-  constructor(
-    private heroService: HeroServiceService,
-    private location: Location,
-    private route: ActivatedRoute
-  ) {
 
+  constructor(private heroService: HeroServiceService, private route : ActivatedRoute) {
+    console.log(route)
   }
 
-  ngOnInit(): void {
-    this.getHero()
-  }
-  getHero () {
-      this.heroService.getHero(2).subscribe(hero => this.hero = hero)
+  ngOnInit() {
+    const route: number = this.route.snapshot.params.id
+    this.heroService.getHeroes().subscribe(heroes => this.hero = heroes[route - 1])
   }
 
 
