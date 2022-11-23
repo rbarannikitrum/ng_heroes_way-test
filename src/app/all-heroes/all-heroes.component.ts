@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HeroServiceService} from "../hero-service.service";
 import {IHero} from "../hero/hero.interface";
-import {data} from "./heroes.data";
 
 @Component({
   selector: 'app-all-heroes',
@@ -8,10 +8,14 @@ import {data} from "./heroes.data";
   styleUrls: ['./all-heroes.component.css']
 })
 export class AllHeroesComponent implements OnInit {
-  heroes : Array<IHero> = data
-  constructor() { }
+  heroes : Array<IHero>
+  constructor(private heroService: HeroServiceService) { }
 
   ngOnInit(): void {
+    this.getHeroes()
+  }
+  getHeroes () {
+    this.heroes = this.heroService.getHeroes()
   }
 
 }
