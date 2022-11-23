@@ -10,7 +10,9 @@ import {MessagesComponent} from './messages/messages.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from "@angular/material/form-field";
-
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {MemoryDataService} from "./memory-data.service";
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(MemoryDataService, {dataEncapsulation: false})
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,13 +8,12 @@
   border: 2px dashed black;
   max-width: 590px;
   border-radius: 10px;
-  padding: 5px;
   color: mediumaquamarine;
+  padding: 5px;
 }
 .button {
   margin: 10px;
   outline: 0;
-
   font-size: 24px;
 }
 
@@ -22,4 +21,6 @@
   font-size: 24px;
   color: cadetblue;
   border: 3px dashed darkcyan;
+  padding: 5px;
+  border-radius: 5px;
 }

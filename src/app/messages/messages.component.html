@@ -1,7 +1,9 @@
+<div style="position: absolute; top: 48px; right: 0">
+  <h1 class="messages" *ngIf="messageService.messages">{{'messages' | uppercase}}</h1>
+  <div class="container" *ngFor="let message of messageService.messages">
+    <div class="msg">{{message}}</div>
+  </div>
+  <button class="button" (click)="messageService.clear()">clear</button>
 
-<h1 class="messages" *ngIf="messageService.messages">{{'messages' | uppercase}}</h1>
-<div class="container" *ngFor="let message of messageService.messages">
-  <div class="msg">{{message}}</div>
 </div>
-<button class="button" (click)="messageService.clear()">clear</button>
 
