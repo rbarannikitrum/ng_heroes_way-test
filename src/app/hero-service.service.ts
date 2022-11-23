@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import {IHero} from "./hero/hero.interface";
 import {data as heroes} from "./all-heroes/heroes.data";
-import {Observable, of} from "rxjs";
+import {delay, Observable, of} from "rxjs";
+import {MessageService} from "./message.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroServiceService {
+  constructor( private  messageService: MessageService) {
 
-  constructor() { }
+  }
   getHeroes (): Observable<Array<IHero>> {
-    return of(heroes)
+    // костыль с таймаутом
+    setTimeout(() => this.messageService.add('heroes fetched'), 2000)
+    return of(heroes).pipe(delay(2000))
   }
 }
+
+

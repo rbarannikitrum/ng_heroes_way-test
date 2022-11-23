@@ -1,0 +1,25 @@
+.container {
+  margin: 10px;
+  max-width: 600px;
+}
+.messages {
+  margin: 10px;
+  font-size: 24px;
+  border: 2px dashed black;
+  max-width: 590px;
+  border-radius: 10px;
+  padding: 5px;
+  color: mediumaquamarine;
+}
+.button {
+  margin: 10px;
+  outline: 0;
+  border: 0;
+  font-size: 24px;
+}
+
+.msg {
+  font-size: 24px;
+  color: cadetblue;
+  border: 3px dashed darkcyan;
+}
