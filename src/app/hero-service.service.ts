@@ -30,6 +30,20 @@ export class HeroServiceService {
   addHero (hero: IHero) {
     return this.http.post<IHero>(this.heroesUrl, hero, this.httpOptions).pipe(tap((newHero: IHero) => this.messageService.add(`added hero ${newHero.id} ${newHero.name}`)))
   }
+  deleteHero (hero: IHero) {
+    const id = hero.id
+    const url = `${this.heroesUrl}/${id}`
+    return this.http.delete<IHero>(url, this.httpOptions).pipe(tap(() => this.messageService.add(`deleted: ${id}, ${hero.name}`)))
+  }
+  searchHero(searchString: string) {
+    if (!searchString.trim()) {
+      return of([])
+    }
+    return this.http.get<Array<IHero>>(`${this.heroesUrl}/?name=${searchString}`).pipe(
+      tap(result => result.length ? this.messageService.add(`found heroes matching ${searchString}`) :
+        this.messageService.add('nothing found'))
+    )
+  }
   log(message: string) {
     this.messageService.add(message)
   }

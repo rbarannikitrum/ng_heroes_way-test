@@ -1,6 +1,6 @@
-<div style="display: flex; flex-direction: column; margin: 10px" >
+<div style="display: flex; flex-direction: column; margin: 10px; gap: 10px" >
   <span class="name_edit">{{hero.name | uppercase}} details</span>
   <span class="id_edit">id : {{hero.id}}</span>
   <input class="input" [(ngModel)]="hero.name"/>
-  <button style="border: 0; width: 100px; font-size: 24px; margin: 10px" (click)="save()">save</button>
+  <button style="border: 0; width: 100px; font-size: 24px; " (click)="save()">save</button>
 </div>

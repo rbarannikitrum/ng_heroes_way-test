@@ -1,5 +1,7 @@
-<div *ngFor="let hero of heroes">
-  <app-hero [hero]="hero"></app-hero>
-</div>
 <input [(ngModel)]="name" value="{{name}}" class="input"/>
 <button (click)="add(name)" class="button">add hero</button>
+<div *ngFor="let hero of heroes" style="display: flex; max-width: 600px">
+  <app-hero [hero]="hero" style="flex: 100%"></app-hero>
+  <button (click)="delete(hero)" class="button1">X</button>
+</div>
+

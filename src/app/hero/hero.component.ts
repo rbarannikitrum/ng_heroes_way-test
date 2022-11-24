@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IHero} from "./hero.interface";
 import {MessageService} from "../message.service";
-import {HeroServiceService} from "../hero-service.service";
 
 
 @Component({

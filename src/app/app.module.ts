@@ -13,6 +13,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {MemoryDataService} from "./memory-data.service";
+import { SearchHeroComponent } from './search-hero/search-hero.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {MemoryDataService} from "./memory-data.service";
     HeroDetailsComponent,
     MessagesComponent,
     DashboardComponent,
+    SearchHeroComponent,
 
   ],
   imports: [

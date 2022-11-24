@@ -31,5 +31,9 @@ export class AllHeroesComponent implements OnInit {
     this.heroService.addHero({name} as IHero).subscribe(hero => this.heroes.push(hero))
     this.name = ''
   }
+  delete (hero: IHero) {
+    this.heroes = this.heroes.filter(el => el !== hero)
+    this.heroService.deleteHero(hero).subscribe()
+  }
 
 }
