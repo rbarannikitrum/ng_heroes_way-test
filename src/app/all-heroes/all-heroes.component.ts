@@ -10,6 +10,7 @@ import {IHero} from "../hero/hero.interface";
 export class AllHeroesComponent implements OnInit {
   heroes : Array<IHero>
   heroService : HeroServiceService
+  name: string
   constructor(heroService: HeroServiceService) {
     this.heroService = heroService
   }
@@ -20,6 +21,15 @@ export class AllHeroesComponent implements OnInit {
   getHeroes () {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes)
+  }
+
+  add (name: string) {
+    name = name.trim()
+    if (!name) {
+      return
+    }
+    this.heroService.addHero({name} as IHero).subscribe(hero => this.heroes.push(hero))
+    this.name = ''
   }
 
 }

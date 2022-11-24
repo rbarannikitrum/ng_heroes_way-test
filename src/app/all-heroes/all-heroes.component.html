@@ -1,3 +1,5 @@
 <div *ngFor="let hero of heroes">
   <app-hero [hero]="hero"></app-hero>
 </div>
+<input [(ngModel)]="name" value="{{name}}" class="input"/>
+<button (click)="add(name)" class="button">add hero</button>
