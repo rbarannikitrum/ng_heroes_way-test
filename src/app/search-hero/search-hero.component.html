@@ -1,14 +1,16 @@
-<div style="display: flex; flex-direction: row">
-  <input placeholder="search hero" id = 'searchBox' [(ngModel)]="searchString"
-         (input)="search(searchString)"
-         style="font-size: 24px; margin: 6px 0 0 0; border: 2px dashed black; border-radius: 5px; max-height: 40px !important; padding: 2px"/>
-  <ul style="margin-top: -10px">
-    <li style="border-radius: 3px; border: 2px dashed black; margin: 5px;padding: 10px; font-size: 24px" *ngFor="let hero of heroes$ | async">
-      <a routerLink="details/{{hero.id}}">
-        {{hero.name}}
-      </a>
-    </li>
-  </ul>
+<div class="container">
+
+  <mat-form-field class="example-full-width">
+    <mat-label style="font-size: 16px">Search hero</mat-label>
+    <input matInput [(ngModel)]="searchString" (input)="search(searchString)" class="input">
+  </mat-form-field>
+  <div style="display: flex; gap: 10px; flex-direction: column">
+    <mat-list role="list" *ngFor="let hero of heroes$ | async">
+      <mat-list-item role="listitem" routerLink="details/{{hero.id}}">
+        <button mat-stroked-button color="accent" style="width: 100px; border-color: #585959" (click)="this.searchString = '';">{{hero.name}}</button>
+      </mat-list-item>
+    </mat-list>
+  </div>
 </div>
 
 

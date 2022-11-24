@@ -1,0 +1,17 @@
+.container {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.input {
+  font-size: 24px;
+  color: aliceblue;
+}
+
+.element {
+  width: 30%;
+  border-radius: 3px;
+  border: 2px dashed black;
+  padding: 10px;
+  font-size: 24px
+}

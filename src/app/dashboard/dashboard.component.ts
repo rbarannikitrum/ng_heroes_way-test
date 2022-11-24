@@ -9,7 +9,7 @@ import {HeroServiceService} from "../hero-service.service";
 })
 export class DashboardComponent implements OnInit {
   heroes : Array<IHero> = []
-  constructor(private heroService : HeroServiceService) {
+  constructor(public heroService : HeroServiceService) {
   }
 
   ngOnInit(): void {

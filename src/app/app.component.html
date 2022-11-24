@@ -2,10 +2,17 @@
   <h1 style="color : mediumaquamarine">{{title | uppercase}}</h1>
 </div>
 <app-messages></app-messages>
-<div style="display: flex; flex-direction: row">
-  <button style="font-size: 24px; outline: 0; margin: 10px; border: 2px dashed slategray; max-height: 34px" routerLink="heroes"> heroes</button>
-  <button style="font-size: 24px; outline: 0; margin: 10px; border: 2px dashed slategray; max-height: 34px" routerLink="dashboard"> dashboard</button>
-  <button style="font-size: 24px; outline: 0; margin: 10px; border: 2px dashed slategray; max-height: 34px" (click) = 'goBack()'>back</button>
-  <app-search-hero></app-search-hero>
+<div class="container">
+  <button mat-stroked-button color="accent" class="btn" (click) = 'goBack()'>Back</button>
+
+  <mat-form-field appearance="outline" color="accent" style="height: 100%; padding-bottom: 10px">
+    <mat-label style="font-size: 18px">Select view</mat-label>
+    <mat-select disableRipple>
+      <mat-option routerLink="heroes">Heroes</mat-option>
+      <mat-option routerLink="dashboard">Dashboard</mat-option>
+    </mat-select>
+  </mat-form-field>
+
 </div>
+<app-search-hero></app-search-hero>
 <router-outlet></router-outlet>

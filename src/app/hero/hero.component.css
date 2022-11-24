@@ -1,28 +1,14 @@
 .container {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
+
   max-width: 600px;
-  border: 3px solid black;
-  border-radius: 10px;
-  margin: 10px;
+ margin-top: 10px;
 }
 
-.id {
-  height: 100%;
-  width: 100%;
-  border-right: 1px solid black;
-  font-size: 16px;
-  margin: 0;
-  background: darkblue;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-}
 .name {
   margin: 16px 0 16px 20px;
   font-size: 20px;
+  border-color: #585959;
 }
 .input {
   max-width: 600px;

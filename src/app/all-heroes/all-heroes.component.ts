@@ -25,6 +25,7 @@ export class AllHeroesComponent implements OnInit {
   }
 
   add (name: string) {
+    debugger
     name = name.trim()
     if (!name) {
       return

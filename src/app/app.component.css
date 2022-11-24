@@ -1,0 +1,25 @@
+
+::ng-deep .mat-form-field-outline {
+  color: #585959 !important;
+
+   }
+::ng-deep .mat-form-field-label {
+  color: #fad33f !important;
+  font-size: 24px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-left: 10px;
+}
+
+.btn {
+  height: 100%;
+  padding: 10px;
+  font-size: 24px;
+  outline: 0;
+  border-color: #585959;
+}
+

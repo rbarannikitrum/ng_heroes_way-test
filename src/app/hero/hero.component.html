@@ -1,8 +1,7 @@
 
 <div class="container" routerLink="/details/{{hero.id}}">
-
-  <h1 class="id">{{hero.id}}</h1>
-  <h1 class="name">{{hero.name}}</h1>
-
+  <button mat-raised-button color="accent" matBadge="{{hero.id}}" class="name">
+    {{hero.name}}
+  </button>
 </div>
 
