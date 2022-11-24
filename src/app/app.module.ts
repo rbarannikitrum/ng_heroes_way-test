@@ -14,6 +14,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {MemoryDataService} from "./memory-data.service";
 import { SearchHeroComponent } from './search-hero/search-hero.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { SearchHeroComponent } from './search-hero/search-hero.component';
     FormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(MemoryDataService, {dataEncapsulation: false})
   ],

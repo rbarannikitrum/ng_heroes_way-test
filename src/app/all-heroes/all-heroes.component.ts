@@ -21,6 +21,7 @@ export class AllHeroesComponent implements OnInit {
   getHeroes () {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes)
+
   }
 
   add (name: string) {

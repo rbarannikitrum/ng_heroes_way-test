@@ -8,6 +8,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
   providedIn: 'root'
 })
 export class HeroServiceService {
+  public loaded: boolean = true
   private heroesUrl = 'api/heroes'
   private httpOptions: { headers: HttpHeaders } = {headers : new HttpHeaders({ 'Content-Type': 'application/json' })}
   private heroes: Array<IHero>;
@@ -16,8 +17,9 @@ export class HeroServiceService {
   ) {}
 
   getHeroes (): Observable<Array<IHero>> {
+    this.loaded = false
     this.messageService.add('heroes fetched')
-    return this.http.get<Array<IHero>>(this.heroesUrl)
+    return this.http.get<Array<IHero>>(this.heroesUrl).pipe(delay(1000)).pipe(tap(() => this.loaded = true))
   }
   getHero (id: number) {
     this.http.get<Array<IHero>>(this.heroesUrl).subscribe(heroes => this.heroes = heroes)
