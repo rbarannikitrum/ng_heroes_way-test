@@ -17,7 +17,6 @@ export class SearchHeroComponent implements OnInit {
   }
   search(str: string) {
     this.heroes$ = this.heroService.searchHero(str)
-    console.log(this.heroes$)
   }
 
 }
