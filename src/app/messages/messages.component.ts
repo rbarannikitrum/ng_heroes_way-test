@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnChanges, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MessageService} from "../message.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
@@ -7,19 +7,20 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.css']
 })
-export class MessagesComponent implements DoCheck  {
-
+export class MessagesComponent implements OnInit {
 
   constructor(public messageService: MessageService, private snackBar: MatSnackBar) { }
-  messages: Array<string> = this.messageService.messages
-  ngDoCheck(): void {
-    // this.messages.forEach(el => {
-    //   this.openSnackBar(el,   'close')
-    // })
+  // messages: Array<string> = this.messageService.messages
+
+  ngOnInit(): void {
+    this.fetchMessage()
   }
 
   openSnackBar (message: string, action: string) {
     this.snackBar.open(message, action, {duration : 5000})
+  }
+  fetchMessage () {
+    this.messageService.eventStream.subscribe(message => this.openSnackBar(message as string, 'close'))
   }
 
 }
