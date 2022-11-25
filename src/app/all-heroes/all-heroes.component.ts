@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HeroServiceService} from "../hero-service.service";
-import {IHero} from "../hero/hero.interface";
+import { HeroServiceService } from "../hero-service.service";
+import { IHero } from "../hero/hero.interface";
 
 @Component({
   selector: 'app-all-heroes',
@@ -8,8 +8,8 @@ import {IHero} from "../hero/hero.interface";
   styleUrls: ['./all-heroes.component.css']
 })
 export class AllHeroesComponent implements OnInit {
-  heroes : Array<IHero>
-  heroService : HeroServiceService
+  heroes: Array<IHero>
+  heroService: HeroServiceService
   name: string
   constructor(heroService: HeroServiceService) {
     this.heroService = heroService
@@ -18,20 +18,21 @@ export class AllHeroesComponent implements OnInit {
   ngOnInit(): void {
     this.getHeroes()
   }
-  getHeroes () {
+
+
+  public getHeroes() {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes)
-
   }
 
-  add (name: string) {
+  public add(name: string) {
     name = name.trim()
     if (!name) {
       return
     }
-    this.heroService.addHero({name} as IHero).subscribe(hero => this.heroes.push(hero))
+    this.heroService.addHero({ name } as IHero).subscribe(hero => this.heroes.push(hero))
   }
-  delete (hero: IHero) {
+  public delete(hero: IHero) {
     this.heroes = this.heroes.filter(el => el !== hero)
     this.heroService.deleteHero(hero).subscribe()
   }

@@ -22,9 +22,9 @@ export class HeroServiceService {
     return this.http.get<Array<IHero>>(this.heroesUrl).pipe(delay(1000)).pipe(tap(() => this.loaded = true))
   }
   getHero (id: number) {
-    this.http.get<Array<IHero>>(this.heroesUrl).subscribe(heroes => this.heroes = heroes)
-    this.messageService.add(`fetched hero: ${this.heroes[id - 1].id} with name ${this.heroes[id - 1].name}`)
-    return of(this.heroes[id - 1])
+    const uri = `api/heroes/${id}`
+
+    return this.http.get<IHero>(uri)
   }
   updateHero(hero: IHero) {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(tap(() => this.log(`updated hero ${hero.id} ${hero.name}`)))

@@ -4,7 +4,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-messages',
-  templateUrl: './messages.component.html',
+  template: '',
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
@@ -19,6 +19,7 @@ export class MessagesComponent implements OnInit {
   openSnackBar (message: string, action: string) {
     this.snackBar.open(message, action, {duration : 5000})
   }
+
   fetchMessage () {
     this.messageService.eventStream.subscribe(message => this.openSnackBar(message as string, 'close'))
   }
