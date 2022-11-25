@@ -1,25 +1,32 @@
 .top {
   margin: 10px;
+  color: #fad33f;
 }
 
 .container {
+  background: #fad33f;
   margin: 10px;
   width: 1000px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .container_el {
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  border: 1px dashed black;
 }
 
 .hero {
   max-width: 300px;
   margin: 10px;
   font-size: 24px;
+}
+
+.card {
+
 }

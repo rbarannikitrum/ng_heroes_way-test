@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HeroServiceService} from "./hero-service.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,7 @@ export class AppComponent {
   title: string = 'heroes';
   constructor() {
   }
+
   goBack () {
     history.back()
   }

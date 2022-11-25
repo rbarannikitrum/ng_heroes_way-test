@@ -2,8 +2,10 @@
 <div class="container">
   <mat-spinner color='primary' *ngIf="!this.heroService.loaded" style="margin: 30px 15%"></mat-spinner>
 
-  <div class="container_el" *ngFor="let hero of heroes" routerLink="/details/{{hero.id}}">
-    <div class="hero">Id: {{hero.id}} Name:{{hero.name}}</div>
-  </div>
+  <button mat-stroked-button class="container_el" *ngFor="let hero of heroes" routerLink="/details/{{hero.id}}">
+    <div class="card">
+      ID: {{hero.id}} Name: {{hero.name}}
+    </div>
+  </button>
 </div>
 

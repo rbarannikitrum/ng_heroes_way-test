@@ -25,13 +25,11 @@ export class AllHeroesComponent implements OnInit {
   }
 
   add (name: string) {
-    debugger
     name = name.trim()
     if (!name) {
       return
     }
     this.heroService.addHero({name} as IHero).subscribe(hero => this.heroes.push(hero))
-    this.name = ''
   }
   delete (hero: IHero) {
     this.heroes = this.heroes.filter(el => el !== hero)
